@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react';
 import ReactFlow from 'react-flow-renderer';
-
 import Node from './Node';
 import FullNode from './FullNode';
 import Popover from './Popover';
@@ -8,17 +7,17 @@ import { generateFlow } from '../utils';
 
 const Flow = ({ mode, steps }) => {
   const [stepDetails, setStepDetails] = useState(null);
-
   const nodeTypes = {
     basic: mode === 'fullscreen' ? FullNode : Node,
   };
-
+  
   const elements = useMemo(() => {
     const width = mode === 'profile' ? 250 : 400;
     const height = mode === 'profile' ? 140 : 390;
     const flow = generateFlow(width, height, steps);
+    
     const elements = flow
-      .map((node) => ({
+    .map((node) => ({
         id: `${mode}-${node.id}`,
         type: 'basic',
         data: { ...node },
@@ -56,6 +55,7 @@ const Flow = ({ mode, steps }) => {
           )
         ).flat()
       );
+     console.log('elemenets',elements);
     return elements;
   }, [mode, steps]);
 

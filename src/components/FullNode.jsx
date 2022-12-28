@@ -80,7 +80,7 @@ const FullNode = ({ data: nodeData }) => {
               { typeof(nodeData.date) === 'object' && (
                 <Box>
                   <Typography style={{ fontSize: '12px' }}>
-                    From { nodeData.date.from } to { nodeData.date.to}
+                    From {nodeData.date.from } to { nodeData.date.to}
                   </Typography>
                 </Box>
               )}

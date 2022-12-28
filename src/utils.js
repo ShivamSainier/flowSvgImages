@@ -1,6 +1,7 @@
 import dagre from 'dagre';
 
 const generateFlow = (width, height, data) => {
+  console.log('generateFlow',data)
   const flow = new dagre.graphlib.Graph();
   flow.setGraph({
     rankdir: 'LR',

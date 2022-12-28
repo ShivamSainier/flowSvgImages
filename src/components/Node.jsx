@@ -22,6 +22,7 @@ const getIcon = (node) => {
 
 const Node = ({ data: nodeData }) => {
   const stepIcon = getIcon(nodeData);
+  
   return (
     <>
       <div className="node-container">
